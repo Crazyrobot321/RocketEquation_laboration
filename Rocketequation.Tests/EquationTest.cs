@@ -28,7 +28,19 @@ namespace Rocketequation.Tests
         }
 
         ////Del 2
-        //[Fact]
-        //public void CanCalculate_FuelMass_UntilZeroOrNegative
+        [Theory]
+        [InlineData(14, 2)]
+        [InlineData(1969, 966)]
+        public void CanCalculate_FuelMass_UntilZeroOrNegative(int mass, int expected)
+        {
+            // Arrange
+            var sut = new FuelCalculator();
+
+            // Act
+            var actual = sut.CalculateFuelMass(mass);
+
+            //Assert
+            Assert.Equal(expected, actual);
+        }
     }
 }

@@ -13,5 +13,10 @@ namespace RocketEquation
         {
             return mass / 3 - 2;
         }
+
+        public int CalculateFuelMass(int mass)
+        {
+            return CalculateFuel(mass);
+        }
     }
 }

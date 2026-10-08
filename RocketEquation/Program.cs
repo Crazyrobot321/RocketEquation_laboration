@@ -13,13 +13,14 @@ namespace RocketEquation
             var calc = new FuelCalculator();
 
 
-            var sum = fuel.Aggregate((acck,x) => acck + calc.CalculateFuel(x));
-            //foreach(var x in fuel)
-            //{
-            //    sum += calc.CalculateFuel(x);
-            //}
+            var sum = fuel.Aggregate(0, (acck,x) => acck + calc.CalculateFuel(x));
+            var sum2 = 0;
+            foreach (var x in fuel)
+            {
+                sum2 += calc.CalculateFuel(x);
+            }
             Console.WriteLine($"{sum}");
-            Console.WriteLine(path);
+            Console.WriteLine($"{sum2}");
         }
     }
 }
